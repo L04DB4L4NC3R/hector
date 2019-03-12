@@ -28,18 +28,18 @@ var (
 )
 
 // StoreABI is the input ABI used to generate the binding from.
-const StoreABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"ageSuggestive\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"timestamp\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"class\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_class\",\"type\":\"string\"},{\"name\":\"_from\",\"type\":\"string\"},{\"name\":\"_to\",\"type\":\"string\"},{\"name\":\"_timestamp\",\"type\":\"string\"},{\"name\":\"_ageSuggestive\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}]"
+const StoreABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"ageSuggestive\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_class\",\"type\":\"string\"},{\"name\":\"_from\",\"type\":\"string\"},{\"name\":\"_to\",\"type\":\"string\"},{\"name\":\"_timestamp\",\"type\":\"string\"},{\"name\":\"_ageSuggestive\",\"type\":\"uint8\"}],\"name\":\"setData\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"timestamp\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"class\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"_class\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"_from\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"_to\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"_timestamp\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"_ageSuggestive\",\"type\":\"uint8\"}],\"name\":\"dataSetter\",\"type\":\"event\"}]"
 
 // StoreBin is the compiled bytecode used for deploying new contracts.
-const StoreBin = `608060405234801561001057600080fd5b506040516105a03803806105a0833981018060405260a081101561003357600080fd5b81019080805164010000000081111561004b57600080fd5b8281019050602081018481111561006157600080fd5b815185600182028301116401000000008211171561007e57600080fd5b5050929190602001805164010000000081111561009a57600080fd5b828101905060208101848111156100b057600080fd5b81518560018202830111640100000000821117156100cd57600080fd5b505092919060200180516401000000008111156100e957600080fd5b828101905060208101848111156100ff57600080fd5b815185600182028301116401000000008211171561011c57600080fd5b5050929190602001805164010000000081111561013857600080fd5b8281019050602081018481111561014e57600080fd5b815185600182028301116401000000008211171561016b57600080fd5b5050929190602001805190602001909291905050508360009080519060200190610196929190610201565b5082600190805190602001906101ad929190610201565b5084600390805190602001906101c4929190610201565b5081600290805190602001906101db929190610201565b5080600460006101000a81548160ff021916908360ff16021790555050505050506102a6565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061024257805160ff1916838001178555610270565b82800160010185558215610270579182015b8281111561026f578251825591602001919060010190610254565b5b50905061027d9190610281565b5090565b6102a391905b8082111561029f576000816000905550600101610287565b5090565b90565b6102eb806102b56000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80632ffa806f14610046578063b80777ea1461006a578063bff852fa146100ed575b600080fd5b61004e610170565b604051808260ff1660ff16815260200191505060405180910390f35b610072610183565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100b2578082015181840152602081019050610097565b50505050905090810190601f1680156100df5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100f5610221565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013557808201518184015260208101905061011a565b50505050905090810190601f1680156101625780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b600460009054906101000a900460ff1681565b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102195780601f106101ee57610100808354040283529160200191610219565b820191906000526020600020905b8154815290600101906020018083116101fc57829003601f168201915b505050505081565b60038054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102b75780601f1061028c576101008083540402835291602001916102b7565b820191906000526020600020905b81548152906001019060200180831161029a57829003601f168201915b50505050508156fea165627a7a7230582096819a089493331ffaaf21e372403407b24ecbcbc3a838bc5c545a25a5a115d40029`
+const StoreBin = `608060405234801561001057600080fd5b5061058e806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80632ffa806f14610051578063b4d09e3f14610075578063b80777ea146101fa578063bff852fa1461027d575b600080fd5b610059610300565b604051808260ff1660ff16815260200191505060405180910390f35b6101f8600480360360a081101561008b57600080fd5b81019080803590602001906401000000008111156100a857600080fd5b8201836020820111156100ba57600080fd5b803590602001918460018302840111640100000000831117156100dc57600080fd5b9091929391929390803590602001906401000000008111156100fd57600080fd5b82018360208201111561010f57600080fd5b8035906020019184600183028401116401000000008311171561013157600080fd5b90919293919293908035906020019064010000000081111561015257600080fd5b82018360208201111561016457600080fd5b8035906020019184600183028401116401000000008311171561018657600080fd5b9091929391929390803590602001906401000000008111156101a757600080fd5b8201836020820111156101b957600080fd5b803590602001918460018302840111640100000000831117156101db57600080fd5b9091929391929390803560ff169060200190929190505050610313565b005b610202610381565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610242578082015181840152602081019050610227565b50505050905090810190601f16801561026f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61028561041f565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156102c55780820151818401526020810190506102aa565b50505050905090810190601f1680156102f25780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b600460009054906101000a900460ff1681565b8686600091906103249291906104bd565b508484600191906103369291906104bd565b508888600391906103489291906104bd565b5082826002919061035a9291906104bd565b5080600460006101000a81548160ff021916908360ff160217905550505050505050505050565b60028054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104175780601f106103ec57610100808354040283529160200191610417565b820191906000526020600020905b8154815290600101906020018083116103fa57829003601f168201915b505050505081565b60038054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104b55780601f1061048a576101008083540402835291602001916104b5565b820191906000526020600020905b81548152906001019060200180831161049857829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104fe57803560ff191683800117855561052c565b8280016001018555821561052c579182015b8281111561052b578235825591602001919060010190610510565b5b509050610539919061053d565b5090565b61055f91905b8082111561055b576000816000905550600101610543565b5090565b9056fea165627a7a72305820eee14daaff1900e218b19ff1e081eabd47095b6b4797d043d84d44728926cf360029`
 
 // DeployStore deploys a new Ethereum contract, binding an instance of Store to it.
-func DeployStore(auth *bind.TransactOpts, backend bind.ContractBackend, _class string, _from string, _to string, _timestamp string, _ageSuggestive uint8) (common.Address, *types.Transaction, *Store, error) {
+func DeployStore(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *Store, error) {
 	parsed, err := abi.JSON(strings.NewReader(StoreABI))
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
-	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(StoreBin), backend, _class, _from, _to, _timestamp, _ageSuggestive)
+	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(StoreBin), backend)
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
@@ -264,4 +264,151 @@ func (_Store *StoreSession) Timestamp() (string, error) {
 // Solidity: function timestamp() constant returns(string)
 func (_Store *StoreCallerSession) Timestamp() (string, error) {
 	return _Store.Contract.Timestamp(&_Store.CallOpts)
+}
+
+// SetData is a paid mutator transaction binding the contract method 0xb4d09e3f.
+//
+// Solidity: function setData(string _class, string _from, string _to, string _timestamp, uint8 _ageSuggestive) returns()
+func (_Store *StoreTransactor) SetData(opts *bind.TransactOpts, _class string, _from string, _to string, _timestamp string, _ageSuggestive uint8) (*types.Transaction, error) {
+	return _Store.contract.Transact(opts, "setData", _class, _from, _to, _timestamp, _ageSuggestive)
+}
+
+// SetData is a paid mutator transaction binding the contract method 0xb4d09e3f.
+//
+// Solidity: function setData(string _class, string _from, string _to, string _timestamp, uint8 _ageSuggestive) returns()
+func (_Store *StoreSession) SetData(_class string, _from string, _to string, _timestamp string, _ageSuggestive uint8) (*types.Transaction, error) {
+	return _Store.Contract.SetData(&_Store.TransactOpts, _class, _from, _to, _timestamp, _ageSuggestive)
+}
+
+// SetData is a paid mutator transaction binding the contract method 0xb4d09e3f.
+//
+// Solidity: function setData(string _class, string _from, string _to, string _timestamp, uint8 _ageSuggestive) returns()
+func (_Store *StoreTransactorSession) SetData(_class string, _from string, _to string, _timestamp string, _ageSuggestive uint8) (*types.Transaction, error) {
+	return _Store.Contract.SetData(&_Store.TransactOpts, _class, _from, _to, _timestamp, _ageSuggestive)
+}
+
+// StoreDataSetterIterator is returned from FilterDataSetter and is used to iterate over the raw logs and unpacked data for DataSetter events raised by the Store contract.
+type StoreDataSetterIterator struct {
+	Event *StoreDataSetter // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *StoreDataSetterIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(StoreDataSetter)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(StoreDataSetter)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *StoreDataSetterIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *StoreDataSetterIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// StoreDataSetter represents a DataSetter event raised by the Store contract.
+type StoreDataSetter struct {
+	Class         string
+	From          string
+	To            string
+	Timestamp     string
+	AgeSuggestive uint8
+	Raw           types.Log // Blockchain specific contextual infos
+}
+
+// FilterDataSetter is a free log retrieval operation binding the contract event 0x782d13adf76114d530de3a833e1ad406312093bf892d9798348cabda6b939158.
+//
+// Solidity: event dataSetter(string _class, string _from, string _to, string _timestamp, uint8 _ageSuggestive)
+func (_Store *StoreFilterer) FilterDataSetter(opts *bind.FilterOpts) (*StoreDataSetterIterator, error) {
+
+	logs, sub, err := _Store.contract.FilterLogs(opts, "dataSetter")
+	if err != nil {
+		return nil, err
+	}
+	return &StoreDataSetterIterator{contract: _Store.contract, event: "dataSetter", logs: logs, sub: sub}, nil
+}
+
+// WatchDataSetter is a free log subscription operation binding the contract event 0x782d13adf76114d530de3a833e1ad406312093bf892d9798348cabda6b939158.
+//
+// Solidity: event dataSetter(string _class, string _from, string _to, string _timestamp, uint8 _ageSuggestive)
+func (_Store *StoreFilterer) WatchDataSetter(opts *bind.WatchOpts, sink chan<- *StoreDataSetter) (event.Subscription, error) {
+
+	logs, sub, err := _Store.contract.WatchLogs(opts, "dataSetter")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(StoreDataSetter)
+				if err := _Store.contract.UnpackLog(event, "dataSetter", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
 }
