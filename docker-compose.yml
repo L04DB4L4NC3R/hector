@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  client:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: client
+    ports:
+    - 3000:3000
+    volumes:
+    - .:/go/src/github.com/angadsharma1016/hector
+    restart: on-failure

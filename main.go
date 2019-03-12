@@ -5,6 +5,7 @@ import (
 	"crypto/ecdsa"
 	"log"
 	"math/big"
+	"net/http"
 	"os"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
@@ -13,8 +14,20 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/joho/godotenv"
 
-	store "github.com/angadsharma1016/hector/contracts"
+	"github.com/angadsharma1016/hector/controller"
 )
+
+type server struct {
+	port        string
+	host        string
+	controllers map[string]*http.Handler
+}
+
+func (s *server) Startup() {
+	log.Println("Listening...")
+	controller.StartClient()
+	log.Fatal(http.ListenAndServe(s.port, nil))
+}
 
 func main() {
 	err := godotenv.Load()
@@ -55,11 +68,13 @@ func main() {
 	auth.GasPrice = gasPrice
 
 	address := common.HexToAddress(os.Getenv("CONTRACT_ADDR"))
-	instance, err := store.NewStore(address, client)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Println("INSTANCE \n\n\n")
-	log.Println(instance)
-
+	log.Println(address)
+	// instance, err := store.NewStore(address, client)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// log.Println("INSTANCE \n\n\n")
+	// log.Println(instance)
+	s := server{port: ":3000", host: "0.0.0.0", controllers: nil}
+	s.Startup()
 }
