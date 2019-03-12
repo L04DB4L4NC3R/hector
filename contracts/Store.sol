@@ -1,18 +1,17 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.5;
 
 contract Store {
     
   string private from;
   string private to;
   string public timestamp;
-  string public type;
+  string public class;
   uint8 public ageSuggestive;
 
-  constructor(string _type, string _from, string _to, string _timestamp, _ageSuggestive) public {
-    version = _from;
+  constructor(string memory _class, string memory _from, string memory _to, string memory _timestamp, uint8 _ageSuggestive) public {
     from = _from;
     to = _to;
-    type = _type;
+    class = _class;
     timestamp = _timestamp;
     ageSuggestive = _ageSuggestive;
   }
