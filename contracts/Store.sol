@@ -4,8 +4,8 @@ contract Store {
 
   event dataSetter(string _class, string _from, string _to, string _timestamp, uint8 _ageSuggestive);
     
-  string private from;
-  string private to;
+  string public from; // encrypted aadhar info
+  string public to; // encrypted aadhar info
   string public timestamp;
   string public class;
   uint8 public ageSuggestive;
