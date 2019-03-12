@@ -25,5 +25,5 @@ abigen --bin=Store_sol_Store.bin --abi=Store_sol_Store.abi --pkg=store --out=Sto
 
 <br />
 
-![workflow 1](./static/images/workflow1.png)
+![workflow 2](./static/images/workflow2.png)
 
