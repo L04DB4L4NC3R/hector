@@ -25,5 +25,18 @@ abigen --bin=Store_sol_Store.bin --abi=Store_sol_Store.abi --pkg=store --out=Sto
 
 <br />
 
+### Module level workflow
+
+<br />
+
 ![workflow 2](./static/images/workflow2.png)
+
+<br />
+<br />
+
+### Auth service workflow
+
+<br />
+
+![Auth workflow](./static/images/ML_workflow.png)
 
